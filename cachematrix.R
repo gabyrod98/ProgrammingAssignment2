@@ -19,12 +19,11 @@ makeCacheMatrix
 
 # Returns a matrix that is the inverse of x, if it is in the memory, it will be "pulled" from there. 
 # if not...it will be calculated 
-cachesolve
-<- function(x,...){
+cachesolve <- function(x,...){
   m <- x$getinverse()
   if (!is.null(m)) { # this is done when the matrix is already in the memory
-    message("getting cached data")
-    return(m)
+  message("getting cached data")
+  return(m)
  }
   data <- x$get()
   m <- solve(data,...) #this is done when the matrix is new data
