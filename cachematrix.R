@@ -19,7 +19,8 @@ if (!is.null(m)) { # this is done when the matrix is already in the memory   
 message("getting cached data")    
 return(m) 
 }    
-data <- x$get()  m <- solve(data,...) #this is done when the matrix is new data 
+data <- x$get() 
+m <- solve(data,...) #this is done when the matrix is new data 
 x$setinverse(m)  
 m
 }
