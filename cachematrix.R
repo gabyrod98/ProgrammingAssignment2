@@ -8,16 +8,13 @@ makeCacheMatrix
   set <- function(y) {    #set takes an argument named y 
     x <<- y   #assign the input argument to the x object
     m <<- NULL #Assign the value of NULLto the m object in the parent environment
-
   } 
   get <- function() x # R retrives x fromthe parent environment of makeCacheMatrix
   setinverse <- function(solve) m <<- solve
   getinverse <- function() m
   list( set=set, get=get, setinverse=setinverse, getinverse=getinverse)
-
 }
-
-# Returns a matrix that is the inverse of x, if it is in the memory, it will be "pulled" from there. 
+# cachesolve returns a matrix that is the inverse of x, if it is in the memory, it will be "pulled" from there. 
 # if not...it will be calculated 
 cachesolve <- function(x,...){
   m <- x$getinverse()
